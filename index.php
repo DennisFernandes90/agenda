@@ -1,4 +1,5 @@
 <?php
+    require_once("db_config/config.php");
     require_once("templates/header.php");
 ?>
     

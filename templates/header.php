@@ -10,25 +10,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous" defer></script>
     <!-- bootsrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <!-- agenda css -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg bg-warning px-4">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php"><i class="bi bi-journal-bookmark"></i> Agenda</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Adicionar Contato</a>
-        </li>
-
-      </ul>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Procurar contato" aria-label="Search">
+      <button class="btn btn-outline-dark" type="submit">Search</button>
+    </form>
     </div>
   </div>
 </nav>
