@@ -2,3 +2,20 @@ body {
     background-color: #000;
     color: #fff;
 }
+
+/* header */
+
+#contact-search-btn:hover{
+    color: #FFC107;
+}
+
+/* seção de abrir formulario */
+
+#open-form .btn-warning{
+    transition: .5s;
+}
+
+#open-form .btn-warning:hover{
+    color: #FFC107;
+    background-color: transparent;
+}
