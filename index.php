@@ -31,8 +31,9 @@
         </div>
         <div class="modal-body">
           <form action="form_process.php" method="post">
+              <input type="hidden" name="type" value="register">
               <div class="col mb-3">
-                <input type="text" name="name" id="name" class="form-control" placeholder="Digite o nome">
+                <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite o nome">
               </div>
               <div class="row mb-3">
                 <div class="col-4">
@@ -78,12 +79,12 @@
               <td><?= $contato["ddd"] ?></td>
               <td><?= $contato["telefone"] ?></td>
               <td>
-                <form action="" method="post" class="d-inline me-md-3">
-                  <input type="hidden" name="delete" value="delete">
+                <form action="form_process.php" method="post" class="d-inline me-md-3">
+                  <input type="hidden" name="type" value="delete">
                   <input type="hidden" name="id" value="<?= $contato["id"] ?>">
-                  <button type="submit" class="delete-btn"><i class="bi bi-trash3"></i></button>
+                  <button type="submit" class="delete-btn"data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Deletar"><i class="bi bi-trash3"></i></button>
                 </form>
-                <button type="button" class="edit-btn"><i class="bi bi-pencil-square"></i></button>
+                <button type="button" class="edit-btn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar"><i class="bi bi-pencil-square"></i></button>
               </td>
             </tr>
             <?php endforeach; ?>

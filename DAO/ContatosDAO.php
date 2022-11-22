@@ -45,4 +45,32 @@
                 return false;
             }
         }
+
+        //grava um contato no banco de dados a partir de um objeto do tipo Contatos
+        public function createContact(Contatos $contact){
+
+            $nome = $contact->getNome();
+            $ddd = $contact->getDdd();
+            $telefone = $contact->getTelefone();
+
+            $stmt = $this->conn->prepare("INSERT INTO contatos (nome, ddd, telefone) VALUES (:nome, :ddd, :telefone)");
+
+            $stmt->bindParam(":nome", $nome);
+            $stmt->bindParam(":ddd", $ddd);
+            $stmt->bindParam(":telefone", $telefone);
+
+            $stmt->execute();
+            
+        }
+
+        //deleta um registro do banco de dados a partir de um id
+        public function deleteContact($id){
+
+            $stmt = $this->conn->prepare("DELETE FROM contatos WHERE id = :id");
+
+            $stmt->bindParam(":id", $id);
+
+            $stmt->execute();
+
+        }
     }

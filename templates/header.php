@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <!-- agenda css -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- script -->
+    <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
 
