@@ -19,12 +19,12 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-warning px-4 mb-4">
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 mb-4">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php"><i class="bi bi-journal-bookmark"></i> Agenda</a>
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Procurar contato" aria-label="Search">
-      <button class="btn btn-outline-dark" id="contact-search-btn" type="submit"><i class="bi bi-search"></i></button>
+      <button class="btn btn-outline-light" id="contact-search-btn" type="submit"><i class="bi bi-search"></i></button>
     </form>
     </div>
   </div>

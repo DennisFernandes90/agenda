@@ -1,21 +1,35 @@
-body {
-    background-color: #000;
-    color: #fff;
-}
 
 /* header */
 
-#contact-search-btn:hover{
+/* #contact-search-btn:hover{
     color: #FFC107;
-}
+} */
 
 /* seção de abrir formulario */
 
-#open-form .btn-warning{
+#open-form-btn-container .btn-warning{
     transition: .5s;
 }
 
-#open-form .btn-warning:hover{
+#open-form-btn-container .btn-warning:hover{
     color: #FFC107;
     background-color: transparent;
+}
+
+/* tabela */
+
+
+/* form delete */
+
+.table .delete-btn, .table .edit-btn{
+    border: none;
+    background-color: transparent;
+}
+
+/* .table .bi-trash3{
+    color: red;
+} */
+
+.table .bi-pencil-square{
+    color: green;
 }

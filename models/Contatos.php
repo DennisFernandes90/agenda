@@ -7,6 +7,10 @@
         private $ddd;
         private $telefone;
 
+        public function setId($id){
+            $this->id = $id;
+        }
+
         public function getId(){
             return $this->id;
         }
@@ -37,5 +41,7 @@
     }
 
     interface ContatosDAOInterface{
+
+        public function buildData($data);
         public function getAllContacts();
     }
