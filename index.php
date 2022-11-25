@@ -2,7 +2,6 @@
     
     require_once("templates/header.php");
     
-
     $contatosDao = new ContatosDAO($conn);
 
     $listaContatos = $contatosDao->getAllContacts();
@@ -11,9 +10,9 @@
   <!-- modal formulario incluir contatos -->
   <section class="container mb-3" id="open-form-btn-container">
 
-    <div class="row">
+    <div class="row justify-content-center">
       
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-8">
         <button class="btn btn-primary" id="open-form-btn" data-bs-toggle="modal" data-bs-target="#modal-add-contact"><i class="bi bi-person-plus"></i> Adicionar Contatos</button>
         
       </div>      
@@ -63,7 +62,7 @@
         <table class="table" id="contact-table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              
               <th scope="col">Nome</th>
               <th scope="col">DDD</th>
               <th scope="col">Número</th>
@@ -74,7 +73,7 @@
 
             <?php foreach($listaContatos as $contato): ?>
             <tr>
-              <th scope="row"><?= $contato["id"] ?></th>
+              
               <td><?= $contato["nome"] ?></td>
               <td><?= $contato["ddd"] ?></td>
               <td><?= $contato["telefone"] ?></td>

@@ -21,9 +21,9 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 mb-4">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.php"><i class="bi bi-journal-bookmark"></i> Agenda</a>
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark px-4 py-4 py-md-2 mb-4">
+  <div class="container-fluid d-flex justify-content-center justify-content-md-between">
+    <a class="navbar-brand d-none d-md-flex" href="index.php"><i class="bi bi-journal-bookmark"></i> Agenda</a>
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Procurar contato" aria-label="Search">
       <button class="btn btn-outline-light" id="contact-search-btn" type="submit"><i class="bi bi-search"></i></button>
