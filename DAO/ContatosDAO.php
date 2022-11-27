@@ -28,7 +28,7 @@
         public function getAllContacts(){
             $rows = [];
 
-            $stmt = $this->conn->prepare("SELECT * FROM contatos");
+            $stmt = $this->conn->prepare("SELECT * FROM contatos ORDER BY id DESC");
 
             $stmt->execute();
 
