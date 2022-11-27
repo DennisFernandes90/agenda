@@ -73,4 +73,32 @@
             $stmt->execute();
 
         }
+
+        //Procura contatos no banco de dados a partir do parametro nome
+        public function searchContactName($nome){
+
+            $rows = [];
+
+            $stmt = $this->conn->prepare("SELECT * FROM contatos WHERE nome LIKE :nome");
+
+            $stmt->bindValue(":nome", '%'.$nome.'%');
+
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0){
+
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach($data as $row){
+                    array_push($rows, $row);
+                }
+
+                return $rows;
+
+            }else{
+
+                return false;
+
+            }
+        }
     }

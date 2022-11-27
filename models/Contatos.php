@@ -46,4 +46,5 @@
         public function getAllContacts();
         public function createContact(Contatos $contact);
         public function deleteContact($id);
+        public function searchContactName($nome);
     }

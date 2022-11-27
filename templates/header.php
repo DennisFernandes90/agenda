@@ -28,7 +28,7 @@
     <a class="navbar-brand d-none d-md-flex" href="index.php"><i class="bi bi-journal-bookmark"></i> Agenda</a>
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Procurar contato" aria-label="Search">
-      <button class="btn btn-outline-light" id="contact-search-btn" type="submit"><i class="bi bi-search"></i></button>
+      <button type="button" class="btn btn-outline-light" id="contact-search-btn" type="submit"><i class="bi bi-search"></i></button>
     </form>
     </div>
   </div>
