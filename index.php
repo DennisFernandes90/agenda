@@ -2,9 +2,6 @@
     
     require_once("templates/header.php");
     
-    $contatosDao = new ContatosDAO($conn);
-
-    $listaContatos = $contatosDao->getAllContacts();
 ?>
     
   <!-- modal formulario incluir contatos -->
@@ -29,8 +26,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="form_process.php" method="post">
-              <input type="hidden" name="type" value="register">
+          <form action="" method="post">
+              <input type="hidden" name="type" id="type" value="register">
               <div class="col mb-3">
                 <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite o nome">
               </div>
@@ -43,7 +40,7 @@
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary">Salvar</button>
+              <button type="button" id="save-contact" class="btn btn-primary">Salvar</button>
           </form>
         </div>
         <div class="modal-footer">
@@ -54,7 +51,7 @@
   </div>
 
   <!-- tabela de contatos -->
-  <section class="container" id="contacts-table-container">
+  <section class="container mb-5" id="contacts-table-container">
 
     <div class="row justify-content-center">
       <div class="col-12 col-md-8">

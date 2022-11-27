@@ -3,6 +3,8 @@
     require_once("models/Contatos.php");
     require_once("DAO/ContatosDAO.php");
 
+    header('Content-Type: application/json; charset=utf-8');
+
     $contatoDao = new ContatosDAO($conn);
 
     $type = $_POST["type"];
@@ -21,10 +23,11 @@
 
         $contatoDao->createContact($contato);
 
-        header("Location: index.php");
+        echo json_encode(["sucesso"]);
+
     }else if($type == "delete"){
         $id = $_POST["id"];
 
         $contatoDao->deleteContact($id);
-        header("Location: index.php");
+        //header("Location: index.php");
     }
