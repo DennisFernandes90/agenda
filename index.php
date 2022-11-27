@@ -69,24 +69,9 @@
               <th scope="col">Ação</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="table-body">
 
-            <?php foreach($listaContatos as $contato): ?>
-            <tr>
-              
-              <td><?= $contato["nome"] ?></td>
-              <td><?= $contato["ddd"] ?></td>
-              <td><?= $contato["telefone"] ?></td>
-              <td>
-                <form action="form_process.php" method="post" class="d-inline me-md-3">
-                  <input type="hidden" name="type" value="delete">
-                  <input type="hidden" name="id" value="<?= $contato["id"] ?>">
-                  <button type="submit" class="delete-btn"data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Deletar"><i class="bi bi-trash3"></i></button>
-                </form>
-                <button type="button" class="edit-btn" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Editar"><i class="bi bi-pencil-square"></i></button>
-              </td>
-            </tr>
-            <?php endforeach; ?>
+
           </tbody>
         </table>
         </div>
