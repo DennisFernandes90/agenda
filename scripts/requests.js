@@ -51,19 +51,27 @@ $(document).ready(function(){
 
     $("#contact-search-btn").click(function(){
 
-        var nome = $("#searchName").val();
+        var input = $("#searchName").val();
         
-        if(nome != ""){
+        if(input != ""){
 
             $.ajax({
                 url: "busca_contato.php",
                 type: "POST",
                 data: {
-                    nome: nome
+                    input: input
                 },
                 dataType: "json",
                 success: function(response){
                     console.log(response);
+                    $(".table-body").html("");
+                    for(var i = 0; i < response.length; i++){
+                        $(".table-body").append(
+                            "<tr><td>" + response[i].nome + "</td><td>" + response[i].ddd + "</td><td>" + response[i].telefone + "</td><td><form action='form_process.php' method='post' class='d-inline me-md-3'><input type='hidden' name='type' value='delete'><input type='hidden' name='id' value='"+ response[i].id +"'><button type='submit' class='delete-btn'data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Deletar'><i class='bi bi-trash3'></i></button></form><button type='button' class='edit-btn' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Editar'><i class='bi bi-pencil-square'></i></button></td></tr>"
+             
+                        );
+                    }
+                    
                 }
             });
         }else{

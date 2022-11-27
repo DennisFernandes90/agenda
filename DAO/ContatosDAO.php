@@ -75,13 +75,13 @@
         }
 
         //Procura contatos no banco de dados a partir do parametro nome
-        public function searchContactName($nome){
+        public function searchContact($param){
 
             $rows = [];
 
             $stmt = $this->conn->prepare("SELECT * FROM contatos WHERE nome LIKE :nome");
 
-            $stmt->bindValue(":nome", '%'.$nome.'%');
+            $stmt->bindValue(":nome", '%'.$param.'%');
 
             $stmt->execute();
 
