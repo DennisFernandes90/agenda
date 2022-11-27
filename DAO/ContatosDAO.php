@@ -79,9 +79,10 @@
 
             $rows = [];
 
-            $stmt = $this->conn->prepare("SELECT * FROM contatos WHERE nome LIKE :nome");
+            $stmt = $this->conn->prepare("SELECT * FROM contatos WHERE nome LIKE :prm OR ddd = :ddd OR telefone LIKE :prm");
 
-            $stmt->bindValue(":nome", '%'.$param.'%');
+            $stmt->bindValue(":prm", '%'.$param.'%');
+            $stmt->bindParam(":ddd", $param);
 
             $stmt->execute();
 
