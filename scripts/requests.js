@@ -46,4 +46,28 @@ $(document).ready(function(){
             }
         });
     });
+
+    //procurar usuários pelo nome
+
+    $("#contact-search-btn").click(function(){
+
+        var nome = $("#searchName").val();
+        
+        if(nome != ""){
+
+            $.ajax({
+                url: "busca_contato.php",
+                type: "POST",
+                data: {
+                    nome: nome
+                },
+                dataType: "json",
+                success: function(response){
+                    console.log(response);
+                }
+            });
+        }else{
+            alert("Digite algo");
+        }
+    });
 });
