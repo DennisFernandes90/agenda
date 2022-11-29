@@ -14,7 +14,7 @@ $(document).ready(function(){
                 console.log(response);
                 for(var i = 0; i < response.length; i++){
                     $(".table-body").append(
-                        "<tr><td>" + response[i].nome + "</td><td>" + response[i].ddd + "</td><td>" + response[i].telefone + "</td><td><form action='form_process.php' method='post' class='d-inline me-md-3'><input type='hidden' name='type' value='delete'><input type='hidden' name='id' value='"+ response[i].id +"'><button type='submit' class='delete-btn'data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Deletar'><i class='bi bi-trash3'></i></button></form><button type='button' class='edit-btn' data-bs-toggle='modal' data-bs-target='#editModal'><i class='bi bi-pencil-square'></i></button></td></tr>"
+                        "<tr><td>" + response[i].id + "</td><td>" + response[i].nome + "</td><td>" + response[i].ddd + "</td><td>" + response[i].telefone + "</td><td><form action='form_process.php' method='post' class='d-inline me-md-3'><input type='hidden' name='type' value='delete'><input type='hidden' name='id' value='"+ response[i].id +"'><button type='submit' class='delete-btn'data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Deletar'><i class='bi bi-trash3'></i></button></form><button type='button' class='edit-btn'><i class='bi bi-pencil-square'></i></button></td></tr>"
          
                     );
                 }
@@ -67,7 +67,7 @@ $(document).ready(function(){
                     $(".table-body").html("");
                     for(var i = 0; i < response.length; i++){
                         $(".table-body").append(
-                            "<tr><td>" + response[i].nome + "</td><td>" + response[i].ddd + "</td><td>" + response[i].telefone + "</td><td><form action='form_process.php' method='post' class='d-inline me-md-3'><input type='hidden' name='type' value='delete'><input type='hidden' name='id' value='"+ response[i].id +"'><button type='submit' class='delete-btn'data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Deletar'><i class='bi bi-trash3'></i></button></form><button type='button' class='edit-btn' data-bs-toggle='modal' data-bs-target='#editModal'><i class='bi bi-pencil-square'></i></button></td></tr>"
+                            "<tr><td>" + response[i].id + "</td><td>" + response[i].nome + "</td><td>" + response[i].ddd + "</td><td>" + response[i].telefone + "</td><td><form action='form_process.php' method='post' class='d-inline me-md-3'><input type='hidden' name='type' value='delete'><input type='hidden' name='id' value='"+ response[i].id +"'><button type='submit' class='delete-btn'data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Deletar'><i class='bi bi-trash3'></i></button></form><button type='button' class='edit-btn'><i class='bi bi-pencil-square'></i></button></td></tr>"
              
                         );
                     }
@@ -78,4 +78,29 @@ $(document).ready(function(){
             alert("Digite algo");
         }
     });
+
+    $(".my-btn").click(function(){
+        
+    });
+
+    //Abertura do modal de edição a partir do clique nos botões de edição na tabela
+    $(document).on('click', '.edit-btn', function() { //para elementos criados dinamicamente, usar esta sintaxe
+        $("#editModal").modal("show");
+
+        var tr = $(this).closest("tr");
+        var data = tr.children("td").map(function(){
+            return $(this).text();
+        }).get();
+
+        console.log(data);
+
+        $("#editId").val(data[0]);
+        $("#editNome").val(data[1]);
+        $("#editDdd").val(data[2]);
+        $("#editTelefone").val(data[3]);
+    });
+
+
+
+
 });
